@@ -1,0 +1,16 @@
+language: cpp
+compiler:
+  - gcc
+  - clang
+addons:
+  apt:
+    update: true
+    packages:
+      - cmake 
+      - cmake-data
+script:
+  - mkdir build
+  - cmake -H. -Bbuild
+  - cmake --build build
+  - make
+  - build/tests/test_B
